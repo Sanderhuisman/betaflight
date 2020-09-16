@@ -1,0 +1,14 @@
+name: C/C++ CI
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install the build toolchain
+      run: make arm_sdk_install
